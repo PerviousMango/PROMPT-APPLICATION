@@ -1,0 +1,46 @@
+25th Dec 2021 (understanding neural networks)
+
+
+    The system is to encompass a long short-term memory for better prediciton
+    What is a long short-term memory?
+        It is a artificial recurrent neural network
+
+
+    What is a neural network?
+        This is a simplified biological neuron based network, in which nodes exist that perform a calculation
+        based on the input that is given, the weights of the input into a node changes as it makes discernment
+        on what matters more than another, multiple nodes mean multiple points of view and hence the similarities
+        are taken and a near accurate predicition, sum of all closely related stuff is taken i.e  weights are 
+        adjusted in the through the processes of backpropagation and gradient descent to facilitate reinforcement learning.
+
+
+    What is a recurrent neural network then?
+        An RNN is simply put a NN that takes the sequential data into consideration. What this means is that they consider prior input
+        when making a decision, they essentially have some 'memory'. Regular NN, simply treat inputs and outputs independently
+        Recurrent neural networks leverage backpropagation through time (BPTT) algorithm to determine the gradients, 
+        which is slightly different from traditional backpropagation as it is specific to sequence data. 
+        The principles of BPTT are the same as traditional backpropagation, where the model trains itself by calculating errors from its
+        output layer to its input layer. These calculations allow us to adjust and fit the parameters of the model appropriately.
+        BPTT differs from the traditional approach in that BPTT sums errors at each time step whereas feedforward networks do not
+        need to sum errors as they do not share parameters across each layer.
+
+
+Activation Functions;
+- SIgmoid [g(x) = 1/(1 + e^-x)]
+    
+
+- Tanh [g(x) = (e^-x - e^-x)/(e^-x + e^-x)]
+
+- Relu [g(x) = max(0 , x)]
+
+
+Now that we have a slightly better understanding of RNN, what are the main issues that are prompting the use of LSTM;
+- Exploding gradients
+
+- Vanishing Gradient => That is, if the previous state that is influencing the current prediction is not in the recent past, 
+        the RNN model may not be able to accurately predict the current state
+        
+
+LSTM - consists of an extra gate (forget gate), on top of the input and output, that essentially dumps what it perceives to be
+    unhelpful data.
+

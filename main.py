@@ -59,17 +59,28 @@ final_input = processed_inputs_one + processed_inputs_two + processed_inputs_thr
 
 #print(processed_inputs.encode("utf-8"))
 
-chars = sorted(list(set(final_input)))
-char_to_num = dict((c, i) for i, c in enumerate(chars))
+charizard = sorted(list(set(final_input)))
+char_to_num = dict((c, i) for i, c in enumerate(charizard))
 input_len = len(final_input)
-vocab_len = len(chars)
+vocab_len = len(charizard)
 print ("Total number of characters:", input_len)
 print ("Total vocab:", vocab_len)
 
-    
+#up until this point we're fine
+
+seq_length = 100
+input_data = []
+output_data = []
 
 
+for i in range(0, input_len - seq_length, 1):
+    in_seq = final_input[i:i + seq_length]
+    out_seq =final_input[i + seq_length]
+    input_data.append([char_to_num[charizard] for charizard in in_seq])
+    output_data.append(char_to_num[out_seq])
 
+n_patterns = len(input_data)
+print ("Total Patterns:", n_patterns)
 
 
 
