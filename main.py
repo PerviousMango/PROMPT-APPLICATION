@@ -91,6 +91,3 @@ print ("Total Patterns:", n_patterns)
 # appy = Flask(__name__)
 # if __name__ == '__main__':
 #     appy.run(debug=True)
-
-
-
